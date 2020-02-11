@@ -1,0 +1,7 @@
+Packages you may need to install:
+pycrypto
+
+
+Links:
+https://stackoverflow.com/questions/27335726/how-do-i-encrypt-and-decrypt-a-string-in-python
+https://www.dlitz.net/software/pycrypto/
