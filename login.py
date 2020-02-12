@@ -1,21 +1,21 @@
 '''
-START DATE: 02/10/20
-
-This python program will work to process log in credentials.
-Steps for this process:
-1. User enters U-name & PW
-2. Program takes the data and salts/ hashes
-3. Pass the U-name to the DAO
-4. DAO searches DB for the matching hashed U-Name & returns hashed PW.
-5. Compare hashes for PW
-6. Issue a True/False state based on PW matches.
-
-If match, allow through to welcome screen
-If fail, kick back with error message.
+Login Page
 '''
+# imports
+from flask import Flask, render_template
 
-def main():
+# Create the application object
+app = Flask(__name__)
 
-    # THESE ARE DUMMY VALUES
-    uName = "admin"
-    password = "password"
+# Use decorators to link the function to a URL
+@app.route('/')
+def home():
+    return "Hello, world!" # Returns a string
+
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html') # render a template
+
+# Start the server with the run method
+if __name__ == '__main__':
+    app.run()
