@@ -8,10 +8,13 @@ app.database = "users.db"
 
 #Search database for specific fields
 def searchdb(table, column):
+    print('DAO.py start')
     g.db = connect_db()
     cur = g.db.execute('select '+column + ' from ' + table)
     contents = [dict(username=row[0]) for row in cur.fetchall()]
-    print (contents)
+    return contents
+    print(contents)
+    print('DAO.py finished')
 
 # Database connection
 def connect_db():

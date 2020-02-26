@@ -7,6 +7,7 @@ def compareCreds(enteredName, enteredPassword):
     
     allUsers = databaseAccessObject.searchdb('users','username')
     
+    print('ALL USERS:')
     print(allUsers)
     
     if enteredName != 'admin' or enteredPassword != 'admin':
