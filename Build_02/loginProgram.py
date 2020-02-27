@@ -2,30 +2,29 @@
 import databaseAccessObject
 
 def compareCreds(enteredName, enteredPassword):
+    # TODO DELETE DEBUG PRINTS
+    print('==========DEBUG==========')
+    print('==========LOGINPROGRAM.PY==========')
+    print('Entered username:')
     print(enteredName)
+    print('Entered Password')
     print(enteredPassword)
-    
-    allUsers = databaseAccessObject.searchdb('users','username')
-    
-    print('ALL USERS:')
-    print(allUsers)
-    
-    if enteredName != 'admin' or enteredPassword != 'admin':
-        return False
-    else:
-        return True
-   
-    
-'''
-TODO:
-    Pull data from DAO into a list
-    Compare pulled data to entered username and PW
-    return pass or fail state based on creds
-    
-    Salt and hash user info
-    
-    
-    Thoughts:
-        Current DAO is not accessing db properly due to app names being the same?
+    try:
+        # Get user password
         
-'''
+        #Variable needed for query
+        unique = "username = '"+enteredName+"'"
+        # Query the database
+        userPassword = databaseAccessObject.pullUserPassword('*', 'users', unique)
+        # Strip the returned data of quotes
+        userPassword = userPassword[0].strip("'")
+        #Compare password. If correct, allow. If not, deny
+        if enteredPassword != userPassword:
+            return False
+        else:
+            return True
+
+    # Return false if username entered is not in DB
+    except:
+        return False
+    print('==========END==========') 

@@ -1,10 +1,9 @@
 ''' Build 0.2 '''
 # imports
 from flask import Flask, render_template, redirect, url_for, request, session
-from flask import flash, g
+from flask import flash
 from functools import wraps
 import loginProgram
-import sqlite3
 
 # Create the application object
 app = Flask(__name__)
@@ -34,10 +33,6 @@ PAGES
 def index():
     return render_template('index.html')
 
-# Basic welcome page
-@app.route('/welcome')
-def welcome():
-    return render_template('welcome.html')
 
 # Login page
 @app.route('/login', methods = ['GET','POST'])
@@ -52,26 +47,10 @@ def login():
         else:
             session['logged_in'] = True
             flash('You were just logged in!')
-            return redirect(url_for('welcome'))
+            return redirect(url_for('index'))
         
     return render_template('login.html', error = error)    
-    
-'''
-def login():
-    error = None
-    if request.method == 'POST':
-        # If incorrect login
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            # Kick back an error code for the user
-            error = 'Invalid credentials. Please try again'
-        
-        else:
-            session['logged_in'] = True
-            flash('You were just logged in!')
-            return redirect(url_for('welcome'))
-    
-    return render_template('login.html', error = error)
-'''
+
 
 # Logout page
 @app.route('/logout')
@@ -79,7 +58,7 @@ def login():
 def logout():
     session.pop('logged_in', None)
     flash("You've just been logged out!")
-    return redirect(url_for('welcome'))
+    return redirect(url_for('index'))
 
 '''
 # Show users in db

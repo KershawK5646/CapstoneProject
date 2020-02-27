@@ -7,14 +7,21 @@ app = Flask(__name__)
 app.database = "users.db"
 
 #Search database for specific fields
-def searchdb(table, column):
-    print('DAO.py start')
+def pullUserPassword(column, table, unique):
+    
+    # TODO DELETE DEBUG PRINTS
+    #print('DAO.py start')
+    
+    # Connect to database
     g.db = connect_db()
-    cur = g.db.execute('select '+column + ' from ' + table)
-    contents = [dict(username=row[0]) for row in cur.fetchall()]
+    # Create a cursor object and parse the table for usernames
+    cur = g.db.execute('SELECT '+column + ' FROM ' + table + ' where '+ unique)
+    # Store query results in a list
+    # Row 2 is the password in current build
+    contents = [row[2] for row in cur.fetchall()]
+    
+    # Return the list to be used
     return contents
-    print(contents)
-    print('DAO.py finished')
 
 # Database connection
 def connect_db():
