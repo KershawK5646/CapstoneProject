@@ -3,15 +3,15 @@ import databaseAccessObject
 
 def compareCreds(enteredName, enteredPassword):
     # TODO DELETE DEBUG PRINTS
+    '''
     print('==========DEBUG==========')
     print('==========LOGINPROGRAM.PY==========')
     print('Entered username:')
     print(enteredName)
     print('Entered Password')
     print(enteredPassword)
+    '''
     try:
-        # Get user password
-        
         #Variable needed for query
         unique = "username = '"+enteredName+"'"
         # Query the database
