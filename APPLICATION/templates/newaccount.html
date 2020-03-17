@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Create Account</h1>
+<br>
+<form action="" method="post">
+	<!--Get Email-->
+	<input type="text" placeholder="Email Address" name="emailAddress" value="{{
+	request.form.emailAddress }}"> 
+	<br><br>
+	<!--Get Username-->
+	<input type="text" placeholder="Enter Username" name="newUsername" value="{{
+	request.form.newUsername }}">
+	<br><br>
+	<!--Get Password-->
+	<input type="password" placeholder="Enter Password" name="password" value="{{
+	request.form.newPassword }}">
+	<br><br>
+	<!--Verify Password-->
+	<input type="password" placeholder="Verify Password" name="verifiedPassword" value="{{
+	request.form.verifiedPassword }}">
+	<br><br>
+	<!--Get Phone Number-->
+	<input type="text" placeholder="Enter Phone Number" name="password" value="{{
+	request.form.phoneNumber }}">
+	<br><br>
+	<!--Submit button-->
+	<input class="btn btn-default" type="submit" value="Create">
+	<br><br>
+</form>
+<br>
+<p>Already have an account? Click <a href="/login">here</a> to log in.</p>
+<br>
+
+{% endblock %}
