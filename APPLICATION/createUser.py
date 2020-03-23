@@ -7,6 +7,12 @@ import DAO
 import MSUTIL
 import sqlite3
 
+'''
+TODO
+EMAIL VERIFICATION DOESN'T WORK (allows duplicates under same email)
+Username duplicates need to be eleminated
+'''
+
 
 def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phoneNumber):
     MSUTIL.debugFormat()
@@ -17,9 +23,9 @@ def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phon
     verifiedPassword = MSUTIL.stripSingleQuotes(verifiedPassword)
     phoneNumber = MSUTIL.stripSingleQuotes(phoneNumber)
 
-    testEmail(emailAddress)
-
-    if (testEmail==False):
+    emailExists = testEmail(emailAddress)
+    print(emailAddress)
+    if (emailExists==True):
         return False
     
     else:
@@ -45,12 +51,14 @@ def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phon
             
             sqliteConnection.commit()
             cursor.close()
+            return True
     
         except sqlite3.Error as error:
             print("Failed to insert data into sqlite table", error)
+            return False
 
         
-        return True
+        
     
         
     
@@ -73,18 +81,17 @@ def testUserID(userID):
 
 # Test to see if email is in use
 def testEmail(emailAddress):
-    MSUTIL.debugFormat()
-    # Search db for existing User Email
-    # Connect to database
-    emailTester = DAO.connect_db()
-    selectAllQuery = 'SELECT * FROM users'
-    cur = emailTester.execute(selectAllQuery)
-    records = cur.fetchall()
-    for row in records:
-        if (row[1]==emailAddress):
-            userEmailInUse = True
+    try:
+        emailAddress = MSUTIL.stripSingleQuotes(emailAddress)
+        queryObject = DAO.connect_db()
+        unique = "email = '"+emailAddress+"'"
+        databaseQuery = 'SELECT * FROM users where '+unique
+        cur = queryObject.execute(databaseQuery)
+        contents = [row[1] for row in cur.fetchall()]
+        contents = MSUTIL.stripSingleQuotes(contents[0])
+        if emailAddress == contents:
+            return True
         else:
-            userEmailInUse = False
-
-    MSUTIL.debugFormat()
-    return userEmailInUse
+            return False
+    except:
+        return False

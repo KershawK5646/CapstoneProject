@@ -28,8 +28,7 @@ def pullUserPassword(selection, table, unique):
     # Create a cursor object and parse the table for usernames
     cur = queryObject.execute('SELECT '+selection + ' FROM ' + table + ' where '+ unique)
     # Store query results in a list
-    # Row 2 is the password in current build
+    # Row 3 is the password in current build
     contents = [row[3] for row in cur.fetchall()]
-    
     # Return the list to be used
     return contents
