@@ -17,23 +17,33 @@ Username duplicates need to be eleminated
 def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phoneNumber):
     MSUTIL.debugFormat()
     #Strip the entered data
+    print("Stripping Data of misc characters")
     emailAddress = MSUTIL.stripSingleQuotes(emailAddress)
     newUsername = MSUTIL.stripSingleQuotes(newUsername)
     Password = MSUTIL.stripSingleQuotes(Password)
     verifiedPassword = MSUTIL.stripSingleQuotes(verifiedPassword)
     phoneNumber = MSUTIL.stripSingleQuotes(phoneNumber)
-
+    print("Characters stripped")
+    MSUTIL.debugFormat()
+    print("Testing Email")
     emailExists = testEmail(emailAddress)
+    print("Email Test Complete")
+    print("Entered Email Address:")
     print(emailAddress)
     if (emailExists==True):
         return False
     
+    print("Section 2 of User Creation:")
     else:
+        print("Creating new User ID")
         userIDExists = True
+        print("While loop to test userID")
         while userIDExists == True:
             # Create random number for user ID
             # Test the number for use
+            print("Generating userID")
             userID=random.randint(0,9999)
+            print("userID: "+userID+)
             userIDExists = testUserID(userID)
         
         try:
@@ -64,7 +74,6 @@ def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phon
     
 # Test to see if userID is in use
 def testUserID(userID):
-    MSUTIL.debugFormat()
     # Search db for existing User ID
     # Connect to database
     userIDTester = DAO.connect_db()
@@ -76,8 +85,9 @@ def testUserID(userID):
             userIDInUse = True
         else:
             userIDInUse = False
-    MSUTIL.debugFormat()
     return userIDInUse
+
+
 
 # Test to see if email is in use
 def testEmail(emailAddress):
@@ -94,4 +104,5 @@ def testEmail(emailAddress):
         else:
             return False
     except:
+        print("Unidentified Error in testEmail()")
         return False
