@@ -35,6 +35,9 @@ def index():
     return render_template('index.html')
 
 
+
+
+
 # Login page
 @app.route('/login', methods = ['GET','POST'])
 def login():
@@ -51,6 +54,10 @@ def login():
             return redirect(url_for('index'))
         
     return render_template('login.html', error = error)    
+
+
+
+
 
 # Create user page
 @app.route('/newuser', methods = ['GET','POST'])
@@ -76,6 +83,11 @@ def newUser():
         
     return render_template('newuser.html', error = error)   
     #return redirect(url_for('error'))
+    
+    
+    
+    
+    
 # Logout page
 @app.route('/logout')
 @login_required
@@ -83,6 +95,9 @@ def logout():
     session.pop('logged_in', None)
     flash("You've just been logged out!")
     return redirect(url_for('index'))
+
+
+
 
 
 @app.route('/error')
