@@ -1,6 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-
-PLACE HTML HERE
-
-{% endblock %}
