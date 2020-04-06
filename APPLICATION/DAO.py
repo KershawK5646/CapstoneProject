@@ -4,7 +4,7 @@ from flask import Flask, g
 
 # Define the database
 db_app = Flask(__name__)
-db_app.database = "users_db.db"
+db_app.database = "makerSpace_db.db"
 
 # Database connection
 def connect_db():

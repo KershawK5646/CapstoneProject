@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # TODO Add secret key properly
 app.secret_key = "This is my secret key"
-app.database = "users_db.db"
+app.database = "makerSpace_db.db"
 
 # Logged in function required
 def login_required(f):
