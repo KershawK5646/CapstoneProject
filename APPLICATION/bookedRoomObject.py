@@ -1,5 +1,5 @@
-'''ROOM OBJECT'''
-class Room:
+'''BOOKED ROOM OBJECT'''
+class bookedRoom:
     def __init__(self, dateBooked, timeBooked, bookedBy, attendence, Purpose):
         self.dateBooked = dateBooked
         self.timeBooked = timeBooked
@@ -20,7 +20,7 @@ class Room:
         def set_attendence(self, attendence):
             self.__attendence = attendence
         
-        def set_phoneNumber(self, phoneNumber):
+        def set_Purpose(self, Purpose):
             self.__Purpose = Purpose
         
         #Create getters
