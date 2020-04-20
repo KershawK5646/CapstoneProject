@@ -104,6 +104,17 @@ def logout():
 def error():
      return render_template('error.html')
 
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+    
+@app.route('/bookARoom')
+@login_required
+def bookARoom():
+    flash('Book a room!')
+    return render_template('bookARoom.html')
+
 # Start the application
 if __name__ == '__main__':
     app.run()

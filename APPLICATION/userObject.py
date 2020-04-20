@@ -1,5 +1,5 @@
 '''USER OBJECT'''
-class User:
+class UserObject:
     def __init__(self, userID, email, username, password, phoneNumber):
         self.userID = userID
         self.email = email

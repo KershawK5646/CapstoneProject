@@ -6,9 +6,11 @@ import random
 import DAO
 import MSUTIL
 import sqlite3
+#import userObject
 
 def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phoneNumber):
     MSUTIL.debugFormat()
+    
     print("Begin createUserMethod().")
     #Strip the entered data
     print("Stripping Data of misc characters")
@@ -45,7 +47,11 @@ def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phon
             sqliteConnection = DAO.connect_db()
             cursor = sqliteConnection.cursor()
             print("Connection Established. Cursor Created.")
+            #print("Creating new user Object")
+            #newUser = userObject.UserObject(userID, emailAddress, newUsername, Password, phoneNumber)
+            print("User object created")
             print("Begin insert data command.")
+            
             sqlite_insert_with_param = '''INSERT INTO users 
             (user_id, email, username, password, phoneNumber)
             VALUES
@@ -64,8 +70,6 @@ def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phon
             print("Failed to insert data into sqlite table", error)
             print("Finish createUserMethod().")
             return False
-        
-        
         
         
         
