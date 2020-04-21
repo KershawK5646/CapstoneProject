@@ -1,5 +1,5 @@
-'''ROOM ITEM TABLE OBJECT'''
-class RoomItemTable:
+'''ROOM ITEM OBJECT'''
+class RoomItem:
     def __init__(self, roomNumber, roomName, canHold):
         self.roomNumber = roomNumber
         self.roomName = roomName

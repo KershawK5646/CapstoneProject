@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h1>Current Bookings</h1>
+<br>
+<p>Click <a href="/logout">here</a> to logout.</p>
+<br><br>
+<h3>Posts:</h3>
+{% for booking in bookings %}
+	<strong>Booking Number:</strong>{{ booking.roomBookingNumber}} <br>
+	<strong>Room Number</strong>{{ booking.roomNumber}} <br>
+	<strong>Room Name</strong>{{ booking.roomName}} <br>
+	<strong>Booked Date</strong>{{ booking.bookedDate}} <br>
+	<strong>Booked Time</strong>{{ booking.bookedTime}} <br>
+	<strong>Attendance</strong>{{ booking.attendance}} <br>
+	<strong>Purpose</strong>{{ booking.purpose}} <br>
+	<strong>Booked By</strong>{{ booking.bookedBy}} <br>
+
+{% endfor %}
+
+{% endblock %}

@@ -5,6 +5,7 @@ from flask import flash
 from functools import wraps
 import createUser
 import loginProgram
+import roomBookings
 
 # Create the application object
 app = Flask(__name__)
@@ -99,16 +100,28 @@ def logout():
 
 
 
-
+# Error page
 @app.route('/error')
 def error():
      return render_template('error.html')
 
 
+# Contact Page
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
     
+
+# View booked rooms
+@app.route('/view_booked_rooms')
+@login_required
+def viewBookedRooms():
+    bookings = roomBookings.viewBookedRooms()
+    
+    return render_template('view_booked_rooms.html', bookings = bookings)
+
+
+# Book a room page
 @app.route('/bookARoom')
 @login_required
 def bookARoom():
