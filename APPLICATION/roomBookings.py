@@ -9,10 +9,9 @@ def viewBookedRooms():
     sqliteConnection = DAO.connect_db()
     print('Connection established')
     print('Assigning query')
-    showAllQuery = 'select * from bookedInventoryTable'
+    showAllQuery = 'select * from bookedRoom'
     cursor = sqliteConnection.execute(showAllQuery)
-    queryResults = sqliteConnection.execute(showAllQuery)
-    print(queryResults)
+    #queryResults = sqliteConnection.execute(showAllQuery)
     print('Pulling all bookings')
     bookings= [dict(roomBookingNumber=row[0], roomNumber=row[1], 
                     roomName=row[2], bookedDate=row[3], bookedTime=row[4], 
