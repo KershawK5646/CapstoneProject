@@ -1,7 +1,4 @@
-from flask import g
 import DAO
-import MSUTIL
-import sqlite3
 
 def viewBookedRooms():
     print('Begin View booked rooms file')
