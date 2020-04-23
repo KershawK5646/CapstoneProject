@@ -52,7 +52,7 @@ def createUserMethod(emailAddress, newUsername, Password, verifiedPassword, phon
             print("User object created")
             print("Begin insert data command.")
             
-            sqlite_insert_with_param = '''INSERT INTO users 
+            sqlite_insert_with_param = '''INSERT INTO userObjectTable 
             (user_id, email, username, password, phoneNumber)
             VALUES
             (?,?,?,?,?);'''
@@ -81,7 +81,7 @@ def testUserID(userID):
     print("Connecting to db.")
     userIDTester = DAO.connect_db()
     print("Connection Established")
-    selectAllQuery = 'SELECT * FROM users'
+    selectAllQuery = 'SELECT * FROM userObjectTable'
     cur = userIDTester.execute(selectAllQuery)
     print("Query Generated")
     print("Searching db for UserID")
@@ -113,7 +113,7 @@ def testEmail(emailAddress):
         print("Connection Established")
         print("Generating query")
         unique = "email = '"+emailAddress+"'"
-        databaseQuery = 'SELECT * FROM users where '+unique
+        databaseQuery = 'SELECT * FROM userObjectTable where '+unique
         print("Passing Query to DB")
         cur = queryObject.execute(databaseQuery)
         contents = [row[1] for row in cur.fetchall()]

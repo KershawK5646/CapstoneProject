@@ -7,7 +7,7 @@ def compareCreds(enteredName, enteredPassword):
         #Variable needed for query
         unique = "username = '"+enteredName+"'"
         # Query the database
-        userPassword = pullUserPassword('*', 'users', unique)
+        userPassword = pullUserPassword('*', 'userObjectTable', unique)
         # Strip the returned data of quotes
         userPassword = MSUTIL.stripSingleQuotes(userPassword[0])
         #Compare password. If correct, allow. If not, deny
