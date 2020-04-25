@@ -1,0 +1,27 @@
+ul {
+  background-color: #dddddd;
+  font-size:20px;
+  
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+
+img {
+  float:  left;
+  border: 1px dotted black;
+  margin: 0px 0px 55px 55px;
+}
+
+	
