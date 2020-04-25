@@ -19,9 +19,16 @@ li a {
 
 
 img {
-  float:  left;
-  border: 1px dotted black;
+  float:  right;
+  
   margin: 0px 0px 55px 55px;
 }
 
-	
+p {
+  margin: 20px;
+  font-size:20px;
+}  
+
+h1 {
+	margin: 27px;
+}	
