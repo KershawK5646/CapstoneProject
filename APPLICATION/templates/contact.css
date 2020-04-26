@@ -5,16 +5,20 @@ body {
 
 li a {
   display: block;
-  color: Black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  border-bottom: 0px solid black;
   
 }
+
+
 
 ul {
   background-color: #708090;
   font-size:20px;
+  border: 1px solid #555;
   
 }  
 

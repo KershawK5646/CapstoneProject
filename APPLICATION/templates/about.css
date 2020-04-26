@@ -1,32 +1,32 @@
-ul {
-  background-color: #dddddd;
-  font-size:20px;
-  
+body {
+  background-color: #778899
 }
+
 
 li a {
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
 
-.active {
-  background-color: #4CAF50;
-}
-
-
-
-img {
-  float:  right;
   
-  margin: 0px 0px 55px 55px;
 }
+
+
+
+ul {
+  background-color: #708090;
+  font-size:20px;
+ 
+  
+}  
 
 p {
   margin: 27px;
   font-size:20px;
+  float: right;
+  
 }  
 
 h1 {
@@ -35,8 +35,26 @@ h1 {
 
 h2 {
    margin: 27px;
+   
 }
 
 h3 {
    margin: 27px;
+   margin-top: 4px;
+   color: black
 }
+
+h4 {
+	margin: 27px;
+}	
+
+
+
+
+a {
+  color: white;
+  font-size:20px;
+  
+}  
+
+
