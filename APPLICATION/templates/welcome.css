@@ -49,4 +49,8 @@ ul {
 
 h1 {
 	margin: 27px;
-}	text-align: center
+	text-align: center;
+	color: white;
+	font-size: 60px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
