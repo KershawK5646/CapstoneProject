@@ -1,0 +1,52 @@
+body {
+  background-image: url("mnt.jpg");
+  background-size: 1540px ;
+  background-position: center;
+  
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-bottom: 0px solid black;
+  
+}
+
+
+
+ul {
+  background-color: 
+  font-size:20px;
+  border: 
+  
+}  
+
+
+
+h1 {
+	margin: 27px;
+}	text-align: center
