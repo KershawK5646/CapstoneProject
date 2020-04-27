@@ -80,12 +80,12 @@ def newUser():
         else:
             session['logged_in'] = True
             flash('Your account has been created!')
-            return redirect(url_for('index'))
+            return redirect(url_for('welcome'))
         
     return render_template('newuser.html', error = error)   
     #return redirect(url_for('error'))
     
-    
+
     
     
     
@@ -97,7 +97,11 @@ def logout():
     flash("You've just been logged out!")
     return redirect(url_for('index'))
 
-
+# Welcome page
+@app.route('/welcome')
+@login_required
+def welcome():
+    return render_template('welcome.html')
 
 
 # Error page
