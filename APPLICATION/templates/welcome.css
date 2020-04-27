@@ -28,9 +28,9 @@ body, html {
 
 
 li a {
-  background-color: 
-  display: block;
+  background-color: none;
   color: white;
+  display: block;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -48,6 +48,11 @@ ul {
 h2 {
   text-align:center;
   font-size: 22px;
+  color: white;
+}	
+
+a {
+	color: pink;
 }	
 
 
@@ -60,12 +65,7 @@ h1 {
 	font-family: Calibri Light, 
 }
 
-a:visited {
-  color: pink;
-  background-color: transparent;
-  padding: 10x 25px;
-  text-align: center;
-}
+
 
 
 a:hover, a:active {
