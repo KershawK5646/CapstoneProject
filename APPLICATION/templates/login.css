@@ -9,14 +9,14 @@ body {
 
 h3 {
 	margin: 27px;
-	text-align: center;
+	text-align: left;
 	color: white;
 	font-size: 60px;
 	font-family: Calibri Light,
 }	
 
 h4 {
-	text-align: center ;
+	text-align: left ;
 	color: white;
 	font-size: 30px;
 }	
