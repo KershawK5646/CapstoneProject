@@ -1,0 +1,27 @@
+body {
+  background-image: url("mnt.jpg");
+  background-size: 1540px ;
+  background-position: center;
+  filter: blur(0px);
+}
+  
+  
+
+h3 {
+	margin: 27px;
+	text-align: center;
+	color: white;
+	font-size: 60px;
+	font-family: Calibri Light,
+}	
+
+h4 {
+	text-align: center ;
+	color: white;
+	font-size: 30px;
+}	
+
+
+a li {
+	text-align: center;
+}	
