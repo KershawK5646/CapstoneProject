@@ -1,4 +1,5 @@
-
+{% extends "base.html" %}
+{% block content %}
 
 
 
@@ -35,17 +36,34 @@
 
 <hr>
 
+<!--DONT DELETE THESE.-->
+<br><br>
+<h2>DEV TESTING LINKS</h2>
+<p><a href="/about">ABOUT</a></p>
+<p><a href="/home">HOME</a></p>
+<p><a href="/welcome">WELCOME</a></p>
+<p><a href="/contact">CONTACT</a></p>
+<p><a href="/bookARoom">BOOK A ROOM</a></p>
+<p><a href="/view_booked_rooms">VIEW ROOM BOOKINGS</a></p>
+<p><a href="/view_booked_inventory">VIEW INVENTORY BOOKINGS</a></p>
+<p><a href="/login">LOGIN PAGE</a></p>
+<p><a href="/logout">LOGOUT</a></p>
+<p><a href="/newuser">NEW USER ACCOUNT CREATION</a></p>
+<p><a href="/error">ERROR PAGE</a></p>
+<h2>END OF DEV TESTING LINKS</h2>
+<br>
+<br>
 
 <h1><b>What is a makerspace?</b></h1>
 
 <p>A makerspace (also referred to as a hacklab, hackspace, or makerspace) is a community-operated,
-often"not for profit")workspace where people with common interests, 
+often "not for profit")workspace where people with common interests, 
 such as computers, maching, technology, sceience,digital art can meet and socialize.</p>
 
 <hr>
 
 
-<h2><b>Where can i find a makerspace ?</b></h2>
+<h2><b>Where can I find a makerspace ?</b></h2>
 
 <p>Specific tools and resources avaliable at hackerspaces
 vary from place to place. They typically provide space for members to
@@ -58,8 +76,8 @@ or physical tool lending lending libraries.</p>
 
 <h3><b>Want to see more and keep in contact?</b></h3>
 
-<h4><a href="newuser.html">You can visit here and create an account today !</a></b></h4>
+<h4><a href="/newuser">You can visit here and create an account today !</a></b></h4>
 
 
-
+{% endblock %}
 

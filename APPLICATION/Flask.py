@@ -30,7 +30,7 @@ def login_required(f):
 PAGES
 '''
 # TODO: This is the main page
-@app.route('/')
+@app.route('/home')
 @login_required
 def index():
     return render_template('index.html')
@@ -86,7 +86,10 @@ def newUser():
     #return redirect(url_for('error'))
     
 
-    
+# About page
+@app.route('/about')
+def about():
+    return render_template('about.html')
     
     
 # Logout page
