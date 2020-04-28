@@ -19,10 +19,39 @@
 <h2>END OF DEV TESTING LINKS</h2>
 <br>
 <br>
-<p><a href="/">HOME</a></p>
-<p><a href="/contact">CONTACT</a></p>
 <br><br>
 <p>Here, you can search for current room bookings. Should you find an opening that
 you'd like to book, please call the number listed on the contact page!</p>
 <p>Click <a href="/logout">here</a> to logout.</p>
+
+<!--Start of form for booking a room-->
+
+<form action="" method="post">
+	<!--Room Number-->
+	<input type="text" placeholder="Form Shows This" name="Variable Name" value="{{
+	request.form.VariableName }}"> 
+	<br><br>
+	<!--Room Name-->
+	<input type="text" placeholder="Form Shows This" name="Variable Name" value="{{
+	request.form.VariableName }}">
+	<br><br>
+	<!--Date-->
+	<input type="text" placeholder="Form Shows This" name="Variable Name" value="{{
+	request.form.VariableName }}"> 
+	<br><br>
+	<!--Attendance-->
+	<input type="text" placeholder="Form Shows This" name="Variable Name" value="{{
+	request.form.VariableName }}"> 
+	<br><br>
+	<!--Purpose-->
+	<input type="text" placeholder="Form Shows This" name="Variable Name" value="{{
+	request.form.VariableName }}"> 
+	<br><br>
+	<!--Booked By-->
+	<input type="text" placeholder="Form Shows This" name="Variable Name" value="{{
+	request.form.VariableName }}"> 
+	<br><br>
+	
+</form>
+
 {% endblock %}
