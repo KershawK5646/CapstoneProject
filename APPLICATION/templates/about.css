@@ -1,14 +1,14 @@
 body {
-  background-color: #778899
+  background-color: #FF7F50;
+  
 }
-
 
 li a {
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: 
 
   
 }
@@ -16,7 +16,7 @@ li a {
 
 
 ul {
-  background-color: #708090;
+  background-color: black;
   font-size:20px;
  
   
@@ -57,4 +57,7 @@ a {
   
 }  
 
+hr {
+  border-top: 1px solid red;
+}
 

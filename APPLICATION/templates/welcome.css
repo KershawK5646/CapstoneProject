@@ -1,6 +1,6 @@
 body {
-  background-image: url("mnt.jpg");
-  background-size: 1540px ;
+  background-image: url("mnt.png");
+  background-size: 1300px ;
   background-position: center;
   
 }
@@ -52,7 +52,7 @@ h2 {
 }	
 
 a {
-	color: pink;
+	color: black;
 }	
 
 

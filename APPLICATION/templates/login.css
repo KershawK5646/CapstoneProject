@@ -1,8 +1,5 @@
 body {
-  background-image: url("mnt.jpg");
-  background-size: 1540px ;
-  background-position: center;
-  filter: blur(0px);
+  background-color: #FF7F50;
 }
   
   
@@ -10,15 +7,16 @@ body {
 h3 {
 	margin: 27px;
 	text-align: left;
-	color: white;
-	font-size: 60px;
-	font-family: Calibri Light,
+	color: black;
+	font-size: 45px;
+	font-family: Calibri Light
 }	
 
 h4 {
 	text-align: left ;
-	color: white;
+	color: black;
 	font-size: 30px;
+	font-family: Calibri Light;
 }	
 
 

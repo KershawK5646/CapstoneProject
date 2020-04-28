@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1><b>Create Account</b></h1>
+<h1><b></b></h1>
 <br>
 <!--DONT DELETE THESE.-->
 <h2>DEV TESTING LINKS</h2>
@@ -19,6 +19,12 @@
 <br>
 <br>
 <form action="" method="post">
+<h3>Create A New Account</h3>
+
+
+  <link rel="stylesheet" type="text/css" href="newuser.css">
+  
+  <body>
 	<!--Get Email-->
 	<input type="text" placeholder="Email Address" name="emailAddress" value="{{
 	request.form.emailAddress }}"> 
@@ -48,6 +54,7 @@
 	
 	<!--Submit button-->
 	<input class="btn btn-default" type="submit" value="Create">
+	</body>
 	
 	<br><br>
 </form>
