@@ -1,9 +1,11 @@
 body {
-  background-image: url("mnt.png");
-  background-size: 1300px ;
-  background-position: center;
-  
+  background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
+  
 
 body, html {
   height: 100%;
@@ -29,7 +31,7 @@ body, html {
 
 li a {
   background-color: none;
-  color: white;
+  color: black;
   display: block;
   text-align: center;
   padding: 14px 16px;
