@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>testing</h1>
+<h1>Log In</h1>
 <br>
 
 
@@ -18,9 +18,13 @@
 
 
 <ul class="nav nav-pills">
-  <li class="active"><a href="about.html">Home</a></li>
-  <li><a href="#">Profile</a></li>
+  <li class="active"><a href="/about">About</a></li>
+  <li class="active"><a href="/contact">Contact Us</a></li>
+  <li class="active"><a href="/newuser">New User</a></li>
+  <!-- DISABLED OPTION
   <li class="disabled"><a href="#">Disabled</a></li>
+  -->
+  <!-- DROPDOWN PRESET
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
       Dropdown <span class="caret"></span>
@@ -33,15 +37,25 @@
       <li><a href="#">Separated link</a></li>
     </ul>
   </li>
+  -->
 </ul>
+
+
+
+
+
 
 <h3> Please Login</h3>
 
 <form action="" method="post">
+	<label for="userName">Username:</label>
 	<input type="text" placeholder="Username" name="username" value="{{
 	request.form.username }}">
+	<br><br>
+	<label for="password">Password:</label>
 	<input type="password" placeholder="Password" name="password" value="{{
 	request.form.password }}">
+	<br><br>
 	<input class="btn btn-default" type="submit" value="Login">
 </form>
 
