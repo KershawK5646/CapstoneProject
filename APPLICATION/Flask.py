@@ -35,7 +35,9 @@ PAGES
 def index():
     return render_template('index.html')
 
-
+@app.route('/')
+def slash():
+    return redirect(url_for('index'))
 
 
 
@@ -135,11 +137,48 @@ def viewBookedInventory():
     return render_template('view_booked_inventory.html', bookedItems = bookedItems)
 
 # Book a room page
-@app.route('/bookARoom')
+@app.route('/bookARoom', methods = ['GET','POST'])
 @login_required
 def bookARoom():
+    print('BOOK A ROOM PAGE')
     flash('Book a room!')
-    return render_template('bookARoom.html')
+    listStatus = [('woodworking lab a','Woodworking Lab A'),
+                  ('robotics lab a','Robotics Lab A'),
+                  ('3d printer room','3D Printer Room'),
+                  ('kitchen lab','Kitchen Lab'),
+                  ('woodworking lab b','Woodworking Lab B'),
+                  ('metalworking lab a','Metalworking Lab A'),
+                  ('metalworking lab b','Metalworking Lab B')]
+    default = 'woodworking lab a'
+    
+    error = None
+    if request.method == 'POST':
+        print('ASSIGNING VARIABLES FROM WEBFORM')
+        # Assign variables
+        roomBooked = request.form['roomBooked']
+        print('roomBooked Assigned')
+        bookingDate = request.form['bookingDate']
+        print('bookingDate Assigned')
+        enteredAttendance = request.form['enteredAttendance']
+        print('enteredAttendance Assigned')
+        bookingPurpose = request.form['bookingPurpose']
+        print('bookingPurpose Assigned')
+        bookedBy = request.form['bookedBy']
+        print('bookedBy Assigned')
+        print('ALL VARIABLES ASSIGNED')
+        if bookARoom.createRoomBooking(roomBooked, bookingDate, enteredAttendance, bookingPurpose, bookedBy) == False:
+            error = 'Looks like there is a booking for that room and time. Please reschedule'
+        else:
+            flash('Reservation Booked!')
+            return redirect(url_for('viewBookedRooms'))
+    
+    return render_template('bookARoom.html', listStatus, default, error=error)
+
+
+# Dev nav page
+@app.route('/dev')
+def devNav():
+    return render_template('dev.html')
 
 # Start the application
 if __name__ == '__main__':

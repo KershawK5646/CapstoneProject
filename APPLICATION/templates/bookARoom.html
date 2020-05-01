@@ -4,22 +4,6 @@
 
 <h1>Book a room!</h1>
 <br>
-<h2>DEV TESTING LINKS</h2>
-<p><a href="/about">ABOUT</a></p>
-<p><a href="/home">HOME</a></p>
-<p><a href="/welcome">WELCOME</a></p>
-<p><a href="/contact">CONTACT</a></p>
-<p><a href="/bookARoom">BOOK A ROOM</a></p>
-<p><a href="/view_booked_rooms">VIEW ROOM BOOKINGS</a></p>
-<p><a href="/view_booked_inventory">VIEW INVENTORY BOOKINGS</a></p>
-<p><a href="/login">LOGIN PAGE</a></p>
-<p><a href="/logout">LOGOUT</a></p>
-<p><a href="/newuser">NEW USER ACCOUNT CREATION</a></p>
-<p><a href="/error">ERROR PAGE</a></p>
-<h2>END OF DEV TESTING LINKS</h2>
-<br>
-<br>
-<br><br>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,23 +19,29 @@ you'd like to book, please call the number listed on the contact page!</p>
 
 <!--Start of form for booking a room-->
 
-<form action="" method="post">
+<body>
 	<!--Room Name-->
-	<label for="roomName">Select a room:</label>
-	<select id="room">
-	  <option value="woodworking lab a">Woodworking Lab A</option>
+	<label for="roomBooked">Select a room:</label>
+	<select id="room" name="roomBooked">
+    	{% value, human in listStatus %}
+        <option value="{{request.form.roomBooked}}" {% if value== default %} selected {% endif %}>{{human}}</option>
+        {% endfor %}  
+	<!--
+	  <option value="woodworking lab a" selected>Woodworking Lab A</option>
 	  <option value="robotics lab a">Robotics Lab A</option>
 	  <option value="3d printer room">3D Printer Room</option>
 	  <option value="kitchen lab">Kitchen Lab</option>
 	  <option value="woodworking lab b">Woodworking Lab B</option>
 	  <option value="metalworking lab a">Metalworking Lab A</option>
-	  <option value="metalworking lab b" selected>Metalworking Lab B</option>
+	  <option value="metalworking lab b">Metalworking Lab B</option>
+	-->
 	</select>
 	<br><br>
 	
 	<!--Date-->
 	<label for="bookingDate">Requested Date:</label>
-	<input type="date" id="requestedDate" name="requestedDateToBook">
+	<input type="date" id="requestedDate" name="requestedDateToBook" value="{{
+	request.form.bookingDate }}">
 	<br><br>
 	
 	<!--Attendance-->
@@ -72,6 +62,9 @@ you'd like to book, please call the number listed on the contact page!</p>
 	request.form.bookedBy }}"> 
 	<br><br>
 	
-</form>
+	<!--Submit button-->
+	<input class="btn btn-default" type="submit" value="Book!">
+	
+</body>
 
 {% endblock %}
