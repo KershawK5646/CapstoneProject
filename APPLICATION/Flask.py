@@ -174,6 +174,12 @@ def bookARoom():
     
     return render_template('bookARoom.html', listStatus, default, error=error)
 
+
+# Dev nav page
+@app.route('/dev')
+def devNav():
+    return render_template('dev.html')
+
 # Start the application
 if __name__ == '__main__':
     app.run()
