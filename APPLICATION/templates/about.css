@@ -4,11 +4,11 @@ body {
 }
 
 li a {
-  display: block;
+  display: pill;
   color: white;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: 
+  padding: 10px; 16px;
+  text-decoration: underline;
 
   
 }
@@ -17,7 +17,7 @@ li a {
 
 ul {
   background-color: black;
-  font-size:20px;
+  font-size:10px;
  
   
 }  

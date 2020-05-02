@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
+<ul class="nav nav-pills">
+  <li class="active"><a href="about.html">Home</a></li>
+  <li><a href="#">Profile</a></li>
+  <li class="disabled"><a href="#">Disabled</a></li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+      Dropdown <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </li>
+</ul>
 
+<hr>
 
 <h1>Book a room!</h1>
 <br>
@@ -10,12 +28,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bookARoom.css">
 
 
-
-<p>Here, you can search for current room bookings. Should you find an opening that
-you'd like to book, please call the number listed on the contact page!</p>
-<p>Click <a href="/logout">here</a> to logout.</p>
 
 <!--Start of form for booking a room-->
 
@@ -64,6 +79,12 @@ you'd like to book, please call the number listed on the contact page!</p>
 	
 	<!--Submit button-->
 	<input class="btn btn-default" type="submit" value="Book!">
+
+
+	<p><b>Here, you can search for current room bookings. Should you find an opening that
+you'd like to book, please call the number listed on the contact page!</b></p>
+<p><b>Click <a href="/logout">here</a> to logout.</b></p>
+
 	
 </body>
 

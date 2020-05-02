@@ -18,34 +18,29 @@ body, html {
 
   /* Center and scale the image nicely */
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.responsive {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
-
+  background-repeat:
 
 li a {
-  background-color: none;
+  background-color: none; 
   color: black;
   display: block;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: underline;
   border-bottom: 0px solid black;
   
 }
 
 
 
+
 ul {
-  font-size:23px;
-  border:
-}  
+  background-color: black;
+  font-size:17px;
+ 
+}
+
+
 
 h2 {
   text-align:center;
@@ -64,7 +59,7 @@ h1 {
 	text-align: center;
 	color: black;
 	font-size: 60px;
-	font-family: Calibri Light, 
+	font-family: Calibri Light;
 }
 
 

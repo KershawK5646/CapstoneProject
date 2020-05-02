@@ -9,29 +9,33 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="about.css">
   
 
 
 <ul class="nav nav-pills">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Profile</a></li>
-  <li class="disabled"><a href="#">Disabled</a></li>
-  <li class="dropdown">
+  <li class="active"><a href="/about">About</a></li>
+  <li class="active"><a href="/contact">Contact Us</a></li>
+  <li class="active"><a href="/logout">Logout</a></li>
+  
+  <li class="active dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-      Dropdown <span class="caret"></span>
+      Go To: <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="#">Action</a></li>
-      <li><a href="#">Another action</a></li>
-      <li><a href="#">Something else here</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/home">Home</a></li>
+	  <li><a href="/view_booked_inventory">View inventory bookings</a></li>
+	  <li><a href="/view_booked_rooms">View room bookigns</a></li>
       <li class="divider"></li>
-      <li><a href="#">Separated link</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </li>
 </ul>
 
+</style>
 
+<hr>
 
 
 
@@ -78,7 +82,7 @@
 	<br><br>
 </form>
 <br>
-<p>Already have an account? Click <a href="/login">here</a> to log in.</p>
+<p><b>Already have an account? Click <a href="/login">here</a> to log in.</b></p>
 <br>
 
 {% endblock %}

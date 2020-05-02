@@ -6,7 +6,7 @@ h3 {
 
 
 body {
-	background-color: #FF7F50;
+	background-color: pink;
 }	
 
 
@@ -15,4 +15,22 @@ p {
 	font-size: 20px;
 }	
 	
-	
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-bottom: 0px solid black;
+  
+}
+
+
+
+ul {
+  background-color: black;
+  font-size:17px;
+  border: 1px solid #555;
+  
+}  
