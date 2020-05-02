@@ -6,6 +6,7 @@ from functools import wraps
 import createUser
 import loginProgram
 import viewBookings
+import progressTracker
 
 # Create the application object
 app = Flask(__name__)
@@ -33,7 +34,8 @@ PAGES
 @app.route('/home')
 @login_required
 def index():
-    return render_template('index.html')
+    progressReport = progressTracker.viewGitUpdates()
+    return render_template('index.html', progressReport=progressReport)
 
 @app.route('/')
 def slash():

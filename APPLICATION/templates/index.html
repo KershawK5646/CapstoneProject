@@ -36,8 +36,15 @@
 </ul>
 
 
-
-
 <h4>This is the main page!</h4>
-<p>Click <a href="/logout">here</a> to logout.</p>
+{% for progress in progressReport %}
+	<strong>Update Number:</strong>{{ progress.updateNumber}} <br>
+	<strong>Update Title:</strong>{{ progress.updateTitle}} <br>
+	<strong>Update Description:</strong>{{ progress.updateDescription}} <br>
+	<strong>Date Completed:</strong>{{ progress.dateCompleted}} <br>
+	<strong>Updated By:</strong>{{ progress.uodatedBy}} 
+	<br>
+	<br>
+	<br>
+{% endfor %}
 {% endblock %}
