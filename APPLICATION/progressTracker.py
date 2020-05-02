@@ -23,6 +23,9 @@ def viewGitUpdates():
     progressReport = [dict(updateNumber=row[0],updateTitle=row[1],
                            updateDescription=row[2],dateCompleted=row[3],
                            uodatedBy=row[4]) for row in cursor.fetchall()]
+    print('ProgressReport assigned')
+    progressReport = reversed(progressReport)
+    print('ProgressReport flipped')
     #print(progressReport)
     print('Data returned')
     return(progressReport)

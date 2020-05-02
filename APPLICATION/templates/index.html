@@ -15,6 +15,7 @@
 
 <!--COMPLETED NAV PILLS-->
 <ul class="nav nav-pills">
+  <li class="active"><a href="/home">Home</a></li>
   <li class="active"><a href="/about">About</a></li>
   <li class="active"><a href="/contact">Contact Us</a></li>
   <li class="active"><a href="/logout">Logout</a></li>
@@ -37,6 +38,8 @@
 
 
 <h4>This is the main page!</h4>
+<br>
+<br>
 {% for progress in progressReport %}
 	<strong>Update Number:</strong>{{ progress.updateNumber}} <br>
 	<strong>Update Title:</strong>{{ progress.updateTitle}} <br>
