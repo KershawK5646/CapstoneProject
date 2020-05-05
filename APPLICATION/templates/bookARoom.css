@@ -2,16 +2,6 @@ h1{
 	font-family: Calibri Light;
 }
 
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size:18px;	
-  background-color: 
-  
-}
 
 
 p {
@@ -23,6 +13,25 @@ p {
    
  body {
 
-	background-color: coral;
+	background-color: pink;
  }
  
+ 
+ li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+  border-bottom: 0px solid black;
+  
+}
+
+
+
+ul {
+  background-color: black;
+  font-size:20px;
+  border: 1px solid #555;
+  
+}  

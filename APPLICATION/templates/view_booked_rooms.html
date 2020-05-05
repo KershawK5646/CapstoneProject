@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="about.css">
+  <link rel="stylesheet" type="text/css" href="view_booked_rooms.css">
+  
   
 
 <!--COMPLETED NAV PILLS-->
@@ -20,6 +21,7 @@
   <li class="active"><a href="/about">About</a></li>
   <li class="active"><a href="/contact">Contact Us</a></li>
   <li class="active"><a href="/logout">Logout</a></li>
+  
   
   <li class="active dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
@@ -33,27 +35,39 @@
 	  <li><a href="/view_booked_rooms">View room bookigns</a></li>
       <li class="divider"></li>
       <li><a href="/logout">Logout</a></li>
+	  
+	
+	
+	
     </ul>
   </li>
 </ul>
 <br>
 
 
-<p>Click <a href="/logout">here</a> to logout.</p>
+
 <br><br>
 <h3>Booked Rooms:</h3>
-{% for booking in bookings %}
+<h4>{% for booking in bookings %}
 	<strong>Booking Number:</strong>{{ booking.roomBookingNumber}} <br>
+	<p></p>
 	<strong>Room Number</strong>{{ booking.roomNumber}} <br>
+	<p><p>
 	<strong>Room Name</strong>{{ booking.roomName}} <br>
+	<p></p>
 	<strong>Booked Date</strong>{{ booking.bookedDate}} <br>
+	<p></p>
 	<strong>Booked Time</strong>{{ booking.bookedTime}} <br>
+	<p></p>
 	<strong>Attendance</strong>{{ booking.attendance}} <br>
+	<p></p>
 	<strong>Purpose</strong>{{ booking.purpose}} <br>
+	<p></p>
 	<strong>Booked By</strong>{{ booking.bookedBy}} 
 	<br>
 	<br>
 	<br>
+	<p>Click <a href="/logout">here</a> to logout.</p></h4>
 {% endfor %}
 
 {% endblock %}

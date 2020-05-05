@@ -1,31 +1,22 @@
-body {
-  background-color: pink;
-}
-  
-  
-
 h3 {
-	margin: 27px;
-	text-align: left;
-	color: black;
-	font-size: 45px;
-	font-family: Calibri Light
-}	
-
-h4 {
-	text-align: left ;
-	color: black;
 	font-size: 30px;
 	font-family: Calibri Light;
+	margin: 27px;
+	margin-top: 4px;
+}
+
+
+body {
+	background-color: pink;
+	
 }	
 
 
-a li {
-	text-align: center;
+p {
+	font-family: Calibri Light;
+	font-size: 25px;
 }	
-
-
-
+	
 
 li a {
   display: block;
@@ -45,3 +36,10 @@ ul {
   border: 1px solid #555;
   
 }  
+
+img {
+	width: autopx;
+	height: 250px;
+    
+	
+}

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="about.css">
+  <link rel="stylesheet" type="text/css" href="view_booked_inventory.css">
   
 
 <!--COMPLETED NAV PILLS-->
@@ -38,18 +38,24 @@
 
 <br>
 
-<h3>Item Bookings:</h3>
+<h3>Item Bookings:
 {% for booking in bookedItems %}
 	<strong>Booking Number:</strong>{{ booking.itemBookingNumber}} <br>
+	<p></p>
 	<strong>Item Number</strong>{{ booking.itemNumber}} <br>
+	<p></p>
 	<strong>Item Name</strong>{{ booking.itemName}} <br>
+	<p></p>
 	<strong>Booked Date</strong>{{ booking.bookedDate}} <br>
+	<p></p>
 	<strong>Booked Time</strong>{{ booking.bookedTime}} <br>
+	<p></p>
 	<strong>Assigned Room</strong>{{ booking.attendance}} <br>
+	<p></p>
 	<strong>Booked By</strong>{{ booking.bookedBy}} 
 	<br>
 	<br>
-	<br>
+	<br></h3>
 {% endfor %}
 
 {% endblock %}
