@@ -40,14 +40,22 @@
 <h4>This is the main page!</h4>
 <br>
 <br>
-{% for progress in progressReport %}
-	<strong>Update Number:</strong>{{ progress.updateNumber}} <br>
-	<strong>Update Title:</strong>{{ progress.updateTitle}} <br>
-	<strong>Update Description:</strong>{{ progress.updateDescription}} <br>
-	<strong>Date Completed:</strong>{{ progress.dateCompleted}} <br>
-	<strong>Updated By:</strong>{{ progress.uodatedBy}} 
-	<br>
-	<br>
-	<br>
-{% endfor %}
+<table>
+	{% for progress in progressReport %}
+	
+		<tr>
+		<td><strong>Update Number:</strong></td><td>{{ progress.updateNumber}}</td></tr>
+		<tr>
+		<td><strong>Update Title:</strong></td><td>{{ progress.updateTitle}}</td></tr>
+		<tr>
+		<td><strong>Update Description:</strong></td><td>{{ progress.updateDescription}}</td></tr>
+		<tr>
+		<td><strong>Date Completed:</strong></td><td>{{ progress.dateCompleted}}</td></tr>
+		<tr>
+		<td><strong>Updated By:</strong></td><td>{{ progress.uodatedBy}}</td></tr>
+		<tr><td><td>
+		<tr><td><td>
+		<br>
+	{% endfor %}
+</table>
 {% endblock %}

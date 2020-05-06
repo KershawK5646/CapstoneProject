@@ -48,26 +48,27 @@
 
 <br><br>
 <h3>Booked Rooms:</h3>
-<h4>{% for booking in bookings %}
-	<strong>Booking Number:</strong>{{ booking.roomBookingNumber}} <br>
-	<p></p>
-	<strong>Room Number</strong>{{ booking.roomNumber}} <br>
-	<p><p>
-	<strong>Room Name</strong>{{ booking.roomName}} <br>
-	<p></p>
-	<strong>Booked Date</strong>{{ booking.bookedDate}} <br>
-	<p></p>
-	<strong>Booked Time</strong>{{ booking.bookedTime}} <br>
-	<p></p>
-	<strong>Attendance</strong>{{ booking.attendance}} <br>
-	<p></p>
-	<strong>Purpose</strong>{{ booking.purpose}} <br>
-	<p></p>
-	<strong>Booked By</strong>{{ booking.bookedBy}} 
-	<br>
-	<br>
-	<br>
-	<p>Click <a href="/logout">here</a> to logout.</p></h4>
-{% endfor %}
-
+<table>
+	{% for booking in bookings %}
+		<tr>
+		<td><strong>Booking Number:</strong></td><td>{{ booking.roomBookingNumber}}</td></tr>
+		<tr>
+		<td><strong>Room Number</strong></td><td>{{ booking.roomNumber}}</td></tr>
+		<tr>
+		<td><strong>Room Name</strong></td><td>{{ booking.roomName}}</td></tr>
+		<tr>
+		<td><strong>Booked Date</strong></td><td>{{ booking.bookedDate}}</td></tr>
+		<tr>
+		<td><strong>Booked Time</strong></td><td>{{ booking.bookedTime}}</td></tr>
+		<tr>
+		<td><strong>Attendance</strong></td><td>{{ booking.attendance}}</td></tr>
+		<tr>
+		<td><strong>Purpose</strong></td><td>{{ booking.purpose}}</td></tr>
+		<tr>
+		<td><strong>Booked By</strong></td><td>{{ booking.bookedBy}}</td></tr>
+		<tr><td><td>
+		<tr><td><td>
+		<br>
+	{% endfor %}
+</table>
 {% endblock %}

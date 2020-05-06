@@ -39,23 +39,25 @@
 <br>
 
 <h3>Item Bookings:
-{% for booking in bookedItems %}
-	<strong>Booking Number:</strong>{{ booking.itemBookingNumber}} <br>
-	<p></p>
-	<strong>Item Number</strong>{{ booking.itemNumber}} <br>
-	<p></p>
-	<strong>Item Name</strong>{{ booking.itemName}} <br>
-	<p></p>
-	<strong>Booked Date</strong>{{ booking.bookedDate}} <br>
-	<p></p>
-	<strong>Booked Time</strong>{{ booking.bookedTime}} <br>
-	<p></p>
-	<strong>Assigned Room</strong>{{ booking.attendance}} <br>
-	<p></p>
-	<strong>Booked By</strong>{{ booking.bookedBy}} 
-	<br>
-	<br>
-	<br></h3>
-{% endfor %}
-
+<table>
+	{% for booking in bookedItems %}
+		<tr>
+		<td><strong>Booking Number:</strong></td><td>{{ booking.itemBookingNumber}}</td></tr>
+		<tr>
+		<td><strong>Item Number</strong></td><td>{{ booking.itemNumber}}</td></tr>
+		<tr>
+		<td><strong>Item Name</strong></td><td>{{ booking.itemName}}</td></tr>
+		<tr>
+		<td><strong>Booked Date</strong></td><td>{{ booking.bookedDate}}</td></tr>
+		<tr>
+		<td><strong>Booked Time</strong></td><td>{{ booking.bookedTime}}</td></tr>
+		<tr>
+		<td><strong>Assigned Room</strong></td><td>{{ booking.attendance}}</td></tr>
+		<tr>
+		<td><strong>Booked By</strong></td><td>{{ booking.bookedBy}}</td></tr>
+		<tr><td><td>
+		<tr><td><td>
+		<br>
+	{% endfor %}
+</table>
 {% endblock %}
