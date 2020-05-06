@@ -10,7 +10,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="view_booked_inventory.css">
   
+<head>
+<title>Booked Inventory</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
 <!--COMPLETED NAV PILLS-->
 <ul class="nav nav-pills">
   <li class="active"><a href="/home">Home</a></li>	
@@ -40,24 +59,25 @@
 
 <h3>Item Bookings:
 <table>
-	{% for booking in bookedItems %}
-		<tr>
-		<td><strong>Booking Number:</strong></td><td>{{ booking.itemBookingNumber}}</td></tr>
-		<tr>
-		<td><strong>Item Number</strong></td><td>{{ booking.itemNumber}}</td></tr>
-		<tr>
-		<td><strong>Item Name</strong></td><td>{{ booking.itemName}}</td></tr>
-		<tr>
-		<td><strong>Booked Date</strong></td><td>{{ booking.bookedDate}}</td></tr>
-		<tr>
-		<td><strong>Booked Time</strong></td><td>{{ booking.bookedTime}}</td></tr>
-		<tr>
-		<td><strong>Assigned Room</strong></td><td>{{ booking.attendance}}</td></tr>
-		<tr>
-		<td><strong>Booked By</strong></td><td>{{ booking.bookedBy}}</td></tr>
-		<tr><td><td>
-		<tr><td><td>
-		<br>
-	{% endfor %}
+	<tr>
+		<th>Booking Number</th>
+		<th>Item Number</th>
+		<th>Item Name</th>
+		<th>Booked Date</th>
+		<th>Booked Time</th>
+		<th>Assigned Room</th>
+		<th>Booked By</th>
+	</tr>	
+		{% for booking in bookedItems %}
+			<tr>
+			<td>{{ booking.itemBookingNumber}}</td>
+			<td>{{ booking.itemNumber}}</td>
+			<td>{{ booking.itemName}}</td>
+			<td>{{ booking.bookedDate}}</td>
+			<td>{{ booking.bookedTime}}</td>
+			<td>{{ booking.attendance}}</td>
+			<td>{{ booking.bookedBy}}</td>
+			</tr>
+		{% endfor %}
 </table>
 {% endblock %}
