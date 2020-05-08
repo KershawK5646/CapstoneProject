@@ -102,7 +102,7 @@ def about():
 def logout():
     session.pop('logged_in', None)
     flash("You've just been logged out!")
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
 
 # Welcome page
 @app.route('/welcome')

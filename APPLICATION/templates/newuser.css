@@ -21,7 +21,7 @@ li a {
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: underline;
   border-bottom: 0px solid black;
   
 }

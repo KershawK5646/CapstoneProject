@@ -11,8 +11,28 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="about.css">
+  <link rel="stylesheet" type="text/css" href="view_booked_rooms.css">
   
+<head>
+<title>Booked Rooms</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head> 
 
 <!--COMPLETED NAV PILLS-->
 <ul class="nav nav-pills">
@@ -20,6 +40,7 @@
   <li class="active"><a href="/about">About</a></li>
   <li class="active"><a href="/contact">Contact Us</a></li>
   <li class="active"><a href="/logout">Logout</a></li>
+  
   
   <li class="active dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
@@ -33,27 +54,41 @@
 	  <li><a href="/view_booked_rooms">View room bookigns</a></li>
       <li class="divider"></li>
       <li><a href="/logout">Logout</a></li>
+	  
+	
+	
+	
     </ul>
   </li>
 </ul>
 <br>
 
 
-<p>Click <a href="/logout">here</a> to logout.</p>
+
 <br><br>
 <h3>Booked Rooms:</h3>
-{% for booking in bookings %}
-	<strong>Booking Number:</strong>{{ booking.roomBookingNumber}} <br>
-	<strong>Room Number</strong>{{ booking.roomNumber}} <br>
-	<strong>Room Name</strong>{{ booking.roomName}} <br>
-	<strong>Booked Date</strong>{{ booking.bookedDate}} <br>
-	<strong>Booked Time</strong>{{ booking.bookedTime}} <br>
-	<strong>Attendance</strong>{{ booking.attendance}} <br>
-	<strong>Purpose</strong>{{ booking.purpose}} <br>
-	<strong>Booked By</strong>{{ booking.bookedBy}} 
-	<br>
-	<br>
-	<br>
-{% endfor %}
-
+<table>
+		<tr>
+			<th>Booking Number</th>
+			<th>Room Number</th>
+			<th>Room Name</th>
+			<th>Booked Date</th>
+			<th>Booked Time</th>
+			<th>Attendance</th>
+			<th>Purpose</th>
+			<th>Booked By</th>
+		</tr>
+	{% for booking in bookings %}
+		<tr>
+		<td>{{ booking.roomBookingNumber}}</td>
+		<td>{{ booking.roomNumber}}</td>
+		<td>{{ booking.roomName}}</td>
+		<td>{{ booking.bookedDate}}</td>
+		<td>{{ booking.bookedTime}}</td>
+		<td>{{ booking.attendance}}</td>
+		<td>{{ booking.purpose}}</td>
+		<td>{{ booking.bookedBy}}</td>
+		</tr>
+	{% endfor %}
+</table>
 {% endblock %}

@@ -12,6 +12,26 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="index.css">
+<head>
+<title>Welcome to Makerspace</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
 
 <!--COMPLETED NAV PILLS-->
 <ul class="nav nav-pills">
@@ -37,17 +57,26 @@
 </ul>
 
 
-<h4>This is the main page!</h4>
+<h1>Site Updates</h1>
 <br>
 <br>
-{% for progress in progressReport %}
-	<strong>Update Number:</strong>{{ progress.updateNumber}} <br>
-	<strong>Update Title:</strong>{{ progress.updateTitle}} <br>
-	<strong>Update Description:</strong>{{ progress.updateDescription}} <br>
-	<strong>Date Completed:</strong>{{ progress.dateCompleted}} <br>
-	<strong>Updated By:</strong>{{ progress.uodatedBy}} 
-	<br>
-	<br>
-	<br>
-{% endfor %}
+<table>
+	<tr>
+		<th>UpdateNumber</th>
+		<th>Update Title</th>
+		<th>Update Description</th>
+		<th>Date Completed</th>
+		<th>Updated By</th>
+	</tr>	
+		{% for progress in progressReport %}
+		
+			<tr>
+			<td>{{ progress.updateNumber}}</td>
+			<td>{{ progress.updateTitle}}</td>
+			<td>{{ progress.updateDescription}}</td>
+			<td>{{ progress.dateCompleted}}</td>
+			<td>{{ progress.uodatedBy}}</td>
+			</tr>
+	{% endfor %}
+</table>
 {% endblock %}
