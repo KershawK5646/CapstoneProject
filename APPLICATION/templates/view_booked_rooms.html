@@ -13,7 +13,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="view_booked_rooms.css">
   
-  
+<head>
+<title>Booked Rooms</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head> 
 
 <!--COMPLETED NAV PILLS-->
 <ul class="nav nav-pills">
@@ -48,26 +67,28 @@
 
 <br><br>
 <h3>Booked Rooms:</h3>
-<h4>{% for booking in bookings %}
-	<strong>Booking Number:</strong>{{ booking.roomBookingNumber}} <br>
-	<p></p>
-	<strong>Room Number</strong>{{ booking.roomNumber}} <br>
-	<p><p>
-	<strong>Room Name</strong>{{ booking.roomName}} <br>
-	<p></p>
-	<strong>Booked Date</strong>{{ booking.bookedDate}} <br>
-	<p></p>
-	<strong>Booked Time</strong>{{ booking.bookedTime}} <br>
-	<p></p>
-	<strong>Attendance</strong>{{ booking.attendance}} <br>
-	<p></p>
-	<strong>Purpose</strong>{{ booking.purpose}} <br>
-	<p></p>
-	<strong>Booked By</strong>{{ booking.bookedBy}} 
-	<br>
-	<br>
-	<br>
-	<p>Click <a href="/logout">here</a> to logout.</p></h4>
-{% endfor %}
-
+<table>
+		<tr>
+			<th>Booking Number</th>
+			<th>Room Number</th>
+			<th>Room Name</th>
+			<th>Booked Date</th>
+			<th>Booked Time</th>
+			<th>Attendance</th>
+			<th>Purpose</th>
+			<th>Booked By</th>
+		</tr>
+	{% for booking in bookings %}
+		<tr>
+		<td>{{ booking.roomBookingNumber}}</td>
+		<td>{{ booking.roomNumber}}</td>
+		<td>{{ booking.roomName}}</td>
+		<td>{{ booking.bookedDate}}</td>
+		<td>{{ booking.bookedTime}}</td>
+		<td>{{ booking.attendance}}</td>
+		<td>{{ booking.purpose}}</td>
+		<td>{{ booking.bookedBy}}</td>
+		</tr>
+	{% endfor %}
+</table>
 {% endblock %}
