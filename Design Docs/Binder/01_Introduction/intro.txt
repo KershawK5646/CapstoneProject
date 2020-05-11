@@ -1,0 +1,3 @@
+To see the site, run code in the "09_CompleteSourceCode" folder.
+To see how to work and navigate the site see the "03_UserManual" folder.
+For additional diagrams or possible additions see folders 04 through 08

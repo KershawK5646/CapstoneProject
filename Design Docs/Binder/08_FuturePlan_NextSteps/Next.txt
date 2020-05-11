@@ -1,0 +1,3 @@
+Attempt to implement features not already included from user stories.
+Allow booking directly from site.
+Fix any bugs.
